@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout Example</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  header {
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Flexbox layout */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sidebar {
+    background: #f4f4f4;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .content {
+    background: #e2e2e2;
+    padding: 40px; /* increased padding for more space */
+    flex: 3;
+    min-width: 300px;
+  }
+
+  .content p {
+    margin-bottom: 20px; /* space between paragraphs */
+  }
+
+  /* Float layout */
+  .float-container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .float-sidebar {
+    float: left;
+    width: 25%;
+    background: #f4f4f4;
+    padding: 20px;
+  }
+
+  .float-content {
+    float: left;
+    width: 75%;
+    background: #e2e2e2;
+    padding: 40px; /* increased padding */
+  }
+
+  .float-content p {
+    margin-bottom: 20px;
+  }
+
+  /* Media queries */
+  @media screen and (max-width: 599px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .sidebar, .content {
+      min-width: 100%;
+    }
+
+    .float-sidebar, .float-content {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 899px) {
+    .container {
+      flex-direction: row;
+    }
+
+    .sidebar {
+      flex: 1;
+    }
+
+    .content {
+      flex: 2;
+    }
+
+    .float-sidebar {
+      width: 30%;
+    }
+
+    .float-content {
+      width: 70%;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .container {
+      flex-direction: row;
+    }
+
+    .sidebar {
+      flex: 1;
+    }
+
+    .content {
+      flex: 3;
+    }
+
+    .float-sidebar {
+      width: 25%;
+    }
+
+    .float-content {
+      width: 75%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Responsive Layout</h1>
+</header>
+
+<h2>Flexbox Layout</h2>
+<div class="container">
+  <div class="sidebar">
+    <h3>Sidebar</h3>
+    <p>This is the sidebar area.</p>
+  </div>
+  <div class="content">
+    <h3>Content</h3>
+    <p>This is the main content area. Resize the browser window to see the layout change.</p>
+    <p>You can add more paragraphs here to fill the content area and see the spacing.</p>
+    <p>Padding and margin ensure the content is easy to read and visually comfortable.</p>
+  </div>
+</div>
+
+<h2>Float + Clear Layout</h2>
+<div class="float-container">
+  <div class="float-sidebar">
+    <h3>Sidebar</h3>
+    <p>This is the sidebar area.</p>
+  </div>
+  <div class="float-content">
+    <h3>Content</h3>
+    <p>This is the main content area. Resize the browser window to see the layout change.</p>
+    <p>More paragraphs give spacing and readability to the content section.</p>
+    <p>Flexbox and float layouts both adapt nicely to different screen sizes.</p>
+  </div>
+</div>
+
+</body>
+</html>

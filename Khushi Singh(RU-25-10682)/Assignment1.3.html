@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Tag Example</title>
+</head>
+<body>
+
+  <h1>Function of the &lt;img&gt; Tag in HTML</h1>
+
+  <!-- Description -->
+  <p>
+    The <b>&lt;img&gt;</b> tag in HTML is used to <b>display images</b> on a webpage.
+    It is an empty tag (it does not have a closing tag) and requires attributes
+    to specify the image source and description.
+  </p>
+
+  <h2>Syntax:</h2>
+  <pre>
+    &lt;img src="image_path" alt="description" width="value" height="value"&gt;
+  </pre>
+
+  <h2>Example:</h2>
+  <!-- Example image -->
+  <img src="https://media.wired.com/photos/5926ffe47034dc5f91bed4e8/master/pass/google-logo.jpg" alt="Google Image" width="300" height="200">
+
+  <h3>Explanation of Attributes:</h3>
+  <ul>
+    <li>
+      <b>src</b> (Source):  
+      Specifies the <b>URL or file path</b> of the image to be displayed.  
+      Example: <code>src="image.jpg"</code>
+    </li>
+
+    <li>
+      <b>alt</b> (Alternate Text):  
+      Provides a <b>text description</b> of the image if it fails to load or
+      for screen readers (important for accessibility).  
+      Example: <code>alt="Beautiful Sunset Image"</code>
+    </li>
+
+    <li>
+      <b>width</b> and <b>height</b>:  
+      Define the <b>size</b> of the image in pixels.  
+      Example: <code>width="200" height="200"</code>
+    </li>
+  </ul>
+
+  <hr>
+
+  <h2>Example When Image Not Found:</h2>
+  <!-- Image with broken link to show alt text -->
+  <img src="notfound.jpg" alt="This image could not be loaded" width="200" height="200">
+
+</body>
+</html>
