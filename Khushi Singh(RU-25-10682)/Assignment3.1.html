@@ -1,0 +1,62 @@
+// ===== var =====
+
+// var is FUNCTION-SCOPED
+function varExample() {
+    if (true) {
+        var x = 10;   // x exists in the whole function
+    }
+    console.log(x);  // ✅ 10 (accessible outside the block)
+}
+varExample();
+
+// HOISTING with var
+console.log(a);     // ✅ undefined (hoisted but not initialized)
+var a = 5;
+
+
+
+// ===== let =====
+
+// let is BLOCK-SCOPED
+function letExample() {
+    if (true) {
+        let y = 20;  // y exists only inside this block
+        console.log(y); // ✅ 20
+    }
+    // console.log(y); // ❌ Error: y is not defined
+}
+letExample();
+
+// HOISTING with let
+// console.log(b); // ❌ Error (hoisted but in Temporal Dead Zone)
+let b = 10;
+
+
+
+// ===== const =====
+
+// const is BLOCK-SCOPED (same as let)
+function constExample() {
+    if (true) {
+        const z = 30;
+        console.log(z); // ✅ 30
+    }
+    // console.log(z); // ❌ Error: z is not defined
+}
+constExample();
+
+// const value cannot be reassigned
+const num = 50;
+// num = 60; // ❌ Error: Assignment to constant variable
+
+// HOISTING with const
+// console.log(c); // ❌ Error (hoisted but in Temporal Dead Zone)
+const c = 100;
+
+
+
+// ===== SUMMARY IN CODE =====
+
+// var  -> function scope, hoisted with undefined
+// let  -> block scope, hoisted but not accessible before declaration
+// const-> block scope, hoisted but not accessible before declaration, cannot reassign 

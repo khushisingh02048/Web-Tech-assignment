@@ -1,0 +1,38 @@
+<!-- EVENT DELEGATION & addEventListener (Explained in Code) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Delegation Example</title>
+</head>
+<body>
+
+    <!-- Parent Element -->
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        // addEventListener
+        // Syntax: element.addEventListener(event, function)
+
+        // EVENT DELEGATION:
+        // Instead of adding event listener to each <li>,
+        // we add ONE listener to the parent <ul>
+
+        let list = document.getElementById("list");
+
+        list.addEventListener("click", function (event) {
+
+            // event.target tells which element was clicked
+            if (event.target.tagName === "LI") {
+                console.log("Clicked:", event.target.innerText);
+            }
+        });
+
+        /*
+        SUMMARY (in code comments):
+
+        addEventListener

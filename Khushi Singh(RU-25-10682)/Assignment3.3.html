@@ -1,0 +1,57 @@
+<!-- ================================
+     DOCUMENT OBJECT MODEL (DOM)
+     ================================ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Example</title>
+</head>
+<body>
+
+    <!-- HTML Elements -->
+    <h1 id="title">Welcome</h1>
+    <p class="info">This is paragraph</p>
+    <div id="box"></div>
+
+    <script>
+        /* ================================
+           WHAT IS DOM?
+           ================================
+           DOM represents the HTML document as objects
+           JavaScript can access and change HTML elements
+        */
+
+        /* ================================
+           SELECTING ELEMENTS
+           ================================ */
+
+        // Select by ID
+        let heading = document.getElementById("title");
+
+        // Select by Class
+        let paragraph = document.getElementsByClassName("info")[0];
+
+        // Select by Tag
+        let divBox = document.getElementsByTagName("div")[0];
+
+        // Select using querySelector
+        let h1Tag = document.querySelector("#title");
+
+        /* ================================
+           MODIFYING CONTENT
+           ================================ */
+
+        // innerText → changes only text
+        heading.innerText = "Hello DOM";
+
+        // innerHTML → changes text + HTML
+        divBox.innerHTML = "<b>This is bold text</b>";
+
+        // Difference example
+        paragraph.innerText = "<i>Italic Text</i>";   // Shows as text
+        divBox.innerHTML += "<br><i>Italic Text</i>"; // Shows as HTML
+    </script>
+
+</body>
+</html>

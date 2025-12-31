@@ -1,0 +1,16 @@
+// PROMISES IN JAVASCRIPT
+// A Promise represents a value that will be available NOW, LATER, or NEVER
+
+// Creating a Promise
+let myPromise = new Promise((resolve, reject) => {
+    let success = true; // change to false to see reject
+
+    if (success) {
+        resolve("Data received successfully");
+    } else {
+        reject("Error while receiving data");
+    }
+});
+
+// Using Promise with then() and catch()
+myPromise 
